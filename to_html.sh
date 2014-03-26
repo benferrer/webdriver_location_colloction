@@ -1,0 +1,1 @@
+slimrb locator.slim > locator.html

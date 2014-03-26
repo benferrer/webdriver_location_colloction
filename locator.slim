@@ -1,0 +1,60 @@
+doctype html
+html
+  head
+    title WebDriver Location Collection
+    meta name="keywords" content="webdriver location"
+    meta name="author" content="easonhan"
+    link rel="stylesheet" href="css/bootstrap.min.css"
+    link rel="stylesheet" href="css/main.css"
+
+  body
+  .container
+    .jumbotron.main-title
+      h1 WebDriver Locate Collection
+      p This html document will teach you locating element using webdriver step by step
+    .row
+      h2 
+        |Level1
+        small Simple Locate
+
+      .col-md-3.col-lg-3.col-sm-3.box
+        h5 with id
+        input class="form-control" id="name" placeholder='id=name'
+
+      .col-md-3.col-lg-3.col-sm-3.box
+        h5 with name
+        input class="form-control" name="eason" placeholder='name=eason'
+
+      .col-md-3.col-lg-3.col-sm-3.box
+        h5 with class
+        input class="form-control han" placeholder='class=han'
+        .alert.alert-warning 
+          |class of this input is 
+          strong form-control han 
+          |locate it by class name "han"
+
+      .col-md-3.col-lg-3.col-sm-3.box
+        h5 with link text
+        a href="http://easonhan.info" target="_blank" easonhan.info
+
+      .col-md-3.col-lg-3.col-sm-3.box
+        h5 with css selector
+        input class="form-control" id="for-css" placeholder='css_selector=#for-css'
+
+      .col-md-3.col-lg-3.col-sm-3.box
+        h5 with xpath 
+        input class="form-control" id="for-xpath" placeholder='xpath=/*[@id="for-xpath"]'
+
+      .col-md-6.col-lg-6.col-sm-6.box
+        h5 with tag_name
+        input class="form-control little-gapper" index="one" placeholder='index=one'
+        input class="form-control little-gapper" index="two" placeholder='index=two'
+        input class="form-control little-gapper" index="three" placeholder='index=three'
+
+
+    div id="footer"
+      p class="text-muted" CopyRight Easonhan 2014
+
+
+  script type="text/javascript" src="js/jquery-1.11.0.min.js"
+  script type="text/javascript" src="js/bootstrap.min.js"
