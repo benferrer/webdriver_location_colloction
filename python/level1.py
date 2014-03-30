@@ -63,3 +63,16 @@ for ip in inputs:
 			ip.send_keys(leading_str)
 assert dr.find_element_by_id('for-xpath').get_attribute('value') == leading_str
 assert dr.find_element_by_id('for-css').get_attribute('disabled') == 'true'
+
+# input something in readonly element
+# method 1
+# remove_readonly_js = '$("#readonly").removeAttr("readonly");'
+# dr.execute_script(remove_readonly_js)
+# read_only_element = dr.find_element_by_id('readonly')
+# read_only_element.send_keys(input_string)
+# assert read_only_element.get_attribute('value') == input_string
+
+# method 2
+set_value_to_readonly_js = '$("#readonly").attr("value", "%s")' %(input_string)
+dr.execute_script(set_value_to_readonly_js)
+assert dr.find_element_by_id('readonly').get_attribute('value') == input_string
