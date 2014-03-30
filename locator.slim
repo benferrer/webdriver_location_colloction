@@ -51,6 +51,188 @@ html
         input class="form-control little-gapper" index="two" placeholder='index=two'
         input class="form-control little-gapper" index="three" placeholder='index=three'
 
+    .row
+      h2 
+        |Level2
+        small Locate elements 
+
+      .col-md-5.col-lg-5.col-sm-5.box
+        h5 four checkboxes
+        .all_checkboxes
+          .checkbox
+            label
+              input type="checkbox" 
+              |first
+          .checkbox
+            label
+              input type="checkbox" 
+              |second
+          .checkbox
+            label
+              input type="checkbox" 
+              |third
+          .checkbox
+            label
+              input type="checkbox" 
+              |last
+
+      .col-md-5.col-lg-5.col-sm-5.box
+        h5 four radios
+        .all_radios
+          .radio
+            label
+              input type="radio" name="radio_name" value="first"
+              |first
+          .radio 
+            label
+              input type="radio" name="radio_name" value="second"
+              |second
+          .radio
+            label
+              input type="radio" name="radio_name" value="third"
+              |third
+          .radio
+            label
+              input type="radio" name="radio_name" value="last"
+              |last
+
+      .col-md-3.col-lg-3.col-sm-3.box
+        h5 Task2.1
+        p Select all the checkboxes
+
+      .col-md-3.col-lg-3.col-sm-3.box
+        h5 Task2.2
+        p Select frist two checkboxes
+
+      .col-md-3.col-lg-3.col-sm-3.box
+        h5 Task2.3
+        p Select last two checkboxes
+
+      .col-md-3.col-lg-3.col-sm-3.box
+        h5 Task2.4
+        p Random select one checkbox
+
+      .col-md-3.col-lg-3.col-sm-3.box
+        h5 Task2.5
+        p Random select two checkbox
+
+      .col-md-3.col-lg-3.col-sm-3.box
+        h5 Task2.6
+        p Toggle select checkbox. if the checkbox is selected, unselect it, else select it.
+
+      .col-md-10.col-lg-10.col-sm-10.box
+        h5 
+          |Task2.7 
+          small Level Up!
+        p Define a method which accept 1 parameters(count). This method will random select checkboxes with quantity of count.
+        pre
+          | # ruby and python 
+          br
+          | def random_select(count)
+          br
+          | // java
+          br
+          | public void randomSelect(int count)
+
+      .col-md-3.col-lg-3.col-sm-3.box
+        h5 Task2.8
+        p Select radio by value.
+        .alert.alert-warning
+          strong
+            | Important!
+          |  These 4 radios have the same name "radio_name". So you can not select the radio by name.
+
+
+      .col-md-3.col-lg-3.col-sm-3.box
+        h5 Task2.9
+        p Random select one radio
+
+      .col-md-10.col-lg-10.col-sm-10.box
+        h5 
+          |Task2.10 
+          small Level Up!
+        p Define a method which accept 2 parameters(type, count). 
+        p If the type is checkbox, random select checkboxes with quantity count.
+        p If the type is radio, random select one radio.
+
+    .row
+      h2 
+        |Level3
+        small The select element
+
+      .col-md-3.col-lg-3.col-sm-3.box
+        h5 Simple select element
+        select class="form-control" name="user"
+          option value="1" tom
+          option value="2" jerry
+          option value="3" jack
+          option value="4" rose
+
+      .col-md-3.col-lg-3.col-sm-3.box
+        h5 Task3.1
+        p Select an option by value
+
+      .col-md-3.col-lg-3.col-sm-3.box
+        h5 Task3.2
+        p Select an option by text
+
+      .col-md-3.col-lg-3.col-sm-3.box
+        h5 Task3.3
+        p Define a method that random select an option and return its text
+
+    .row
+      h2 
+        |Level4
+        small Javascript alert confirm and prompt
+
+      .col-md-3.col-lg-3.col-sm-3.box
+        h5 Simple alert
+        a class="btn btn-lg btn-default" onclick="alert('I am an alert!')" Alert Button
+
+      .col-md-3.col-lg-3.col-sm-3.box
+        h5 Simple confrim
+        a class="btn btn-lg btn-default" onclick="confirm('I am a confirm!');" Confirm Button
+
+      .col-md-3.col-lg-3.col-sm-3.box
+        h5 Simple confrim
+        a class="btn btn-lg btn-default" onclick="prompt('I am a prompt!', 'Type something here');" Prompt Button
+
+    .row
+      h2 
+        |Level5
+        small Handle popup winown
+
+      .col-md-3.col-lg-3.col-sm-3.box
+        h5 A popup window
+        a href="http://www.baidu.com" target="_blank" Baidu
+
+      .col-md-3.col-lg-3.col-sm-3.box
+        h5 Task 5.1
+        p Click the baidu link a new window will popup, locate the window and enter easonhan.info in the search textfield
+
+      .col-md-3.col-lg-3.col-sm-3.box
+        h5 Task 5.2
+        p Try to get the href of baidu link and get the url in the same window. Then enter easonhan.info in the search textfield
+
+    .row
+      h2 
+        |Level6
+        small Handle iframe
+
+      .col-md-3.col-lg-3.col-sm-3.box
+        h5 Simple iframe
+        .outsize
+          iframe src='frame.html' width="200px" height="100px" frameborder="0"
+          p Outside the frame
+          input class="form-control" name="outsize"
+
+      .col-md-3.col-lg-3.col-sm-3.box
+        h5 Task 6.1
+        p Type something in the outsize textfield
+
+      .col-md-3.col-lg-3.col-sm-3.box
+        h5 Task 6.2
+        p Type something in the inside textfield
 
     div id="footer"
       p class="text-muted" CopyRight Easonhan 2014

@@ -6,9 +6,10 @@
 	border-radius: 4px;
 	/*border: 1px solid #F4E4B4;*/
 	/*background-color: #98AFC7;*/
-	height: 150px;
+	/*height: 180px;*/
+	min-height: 100px;
 	/*background-color: #FFFFF0;*/
-	background-color: #eeeeef;
+	background-color: #f5f5f5;
 	margin: 0 1em 1em 1em;
 }
 
