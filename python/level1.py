@@ -8,6 +8,7 @@ file_path =  'file:///' + os.path.abspath('locator.html')
 dr.get(file_path)
 
 input_string = 'easonhan.info'
+
 # locate id=name
 id_element = dr.find_element_by_id('name')
 id_element.send_keys(input_string)
@@ -33,3 +34,17 @@ class_elem_css = dr.find_element_by_css_selector('input[class="form-control han"
 class_elem_css.send_keys('css')
 assert class_elem_css.get_attribute('value') == (input_string + 'xpath' + 'css')
 
+# locate by link_text=easonhan.info
+link_text_element = dr.find_element_by_link_text(input_string)
+link_text_element.click()
+assert link_text_element.text == input_string
+
+# locate by css_selector=#for-css
+css_element = dr.find_element_by_css_selector('#for-css')
+css_element.send_keys(input_string)
+assert css_element.get_attribute('value') == input_string
+
+# locate by xpath=#for-css
+xpath_element = dr.find_element_by_xpath('//input[@id="for-xpath"]')
+xpath_element.send_keys(input_string)
+assert xpath_element.get_attribute('value') == input_string
