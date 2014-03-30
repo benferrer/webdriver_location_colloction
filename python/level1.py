@@ -9,7 +9,7 @@ file_path =  'file:///' + os.path.abspath('locator.html')
 dr.get(file_path)
 
 input_string = 'easonhan.info'
-'''
+
 # locate id=name
 id_element = dr.find_element_by_id('name')
 id_element.send_keys(input_string)
@@ -49,7 +49,6 @@ assert css_element.get_attribute('value') == input_string
 xpath_element = dr.find_element_by_xpath('//input[@id="for-xpath"]')
 xpath_element.send_keys(input_string)
 assert xpath_element.get_attribute('value') == input_string
-'''
 
 # match id ~= ^for inputs and input something
 inputs = dr.find_elements_by_tag_name('input')
