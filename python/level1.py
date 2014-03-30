@@ -58,7 +58,7 @@ dr.execute_script(disable_js)
 leading_str = 'Leading with for'
 for ip in inputs:
 	if re.search('^for.*', ip.get_attribute('id')): 
-		if ip.get_attribute('type') == 'text' and ip.get_attribute('disabled') is None :
+		if ip.get_attribute('type') == 'text' and ip.is_enabled() :
 			ip.clear()
 			ip.send_keys(leading_str)
 assert dr.find_element_by_id('for-xpath').get_attribute('value') == leading_str
@@ -76,3 +76,36 @@ assert dr.find_element_by_id('for-css').get_attribute('disabled') == 'true'
 set_value_to_readonly_js = '$("#readonly").attr("value", "%s")' %(input_string)
 dr.execute_script(set_value_to_readonly_js)
 assert dr.find_element_by_id('readonly').get_attribute('value') == input_string
+
+# locate element using js
+locate_index_one_js = "return $('input[index=\"one\"]');"
+the_list = dr.execute_script(locate_index_one_js)
+the_list[0].send_keys(input_string)
+assert dr.find_element_by_css_selector("input[index=\"one\"]").get_attribute('value') == input_string
+
+# element exists using js
+# wether index=four element exists? 
+# exists_js = 'return $("input[index=%s]").length' %("four")
+# res = dr.execute_script(exists_js)
+# if res > 0:
+# 	print 'exists'
+# else:
+# 	print 'not exists'
+
+# params css_locator
+# reurn true if element exits else return false
+def exists(dr, css_locator):
+	js = 'return $(\'%s\').length' %(css_locator)
+	print js 
+	if dr.execute_script(js) > 0:
+		return True
+	else:
+		return False
+
+if(exists(dr, 'input[index="four"]')):
+	print 'ok'
+else:
+	print 'not ok'
+
+
+
