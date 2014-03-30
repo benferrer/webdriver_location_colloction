@@ -2,6 +2,7 @@
 from selenium import webdriver
 import time
 import os
+import re
 
 dr = webdriver.Chrome()
 file_path =  'file:///' + os.path.abspath('locator.html')
@@ -48,3 +49,14 @@ assert css_element.get_attribute('value') == input_string
 xpath_element = dr.find_element_by_xpath('//input[@id="for-xpath"]')
 xpath_element.send_keys(input_string)
 assert xpath_element.get_attribute('value') == input_string
+
+# match id ~= ^for inputs and input something
+inputs = dr.find_elements_by_tag_name('input')
+leading_str = 'Leading with for'
+for ip in inputs:
+	if re.search('^for.*', ip.get_attribute('id')): 
+		if ip.get_attribute('type') == 'text' :
+			ip.clear()
+			ip.send_keys(leading_str)
+assert dr.find_element_by_id('for-xpath').get_attribute('value') == leading_str
+assert dr.find_element_by_id('for-css').get_attribute('value') == leading_str
