@@ -238,9 +238,35 @@ html
         h4 Task 6.2
         p Type something in the inside textfield
 
+    .row
+      h2 
+        |Level7
+        small Wysiwyg editor
+      .col-md-10.col-lg-10.col-sm-10.box
+        h4 CKEditor
+        textarea id="ck_editor"
+        a class="btn btn-default type-to-editor" onclick="type_to_editor(this)" Click to type something in editor
+
+
     div id="footer"
       p class="text-muted" CopyRight Easonhan 2014
 
 
   script type="text/javascript" src="js/jquery-1.11.0.min.js"
   script type="text/javascript" src="js/bootstrap.min.js"
+  script type="text/javascript" src="ckeditor/ckeditor.js"
+  script type="text/javascript" src="ckeditor/adapters/jquery.js"
+  javascript:
+    $( document ).ready( function() {
+      $( 'textarea#ck_editor' ).ckeditor();
+    } );
+    function type_to_editor(btn) {
+      $('.cke_wysiwyg_frame')[0].contentWindow.document.body.innerHTML='<h1>Try to type something here</h1>';
+      $(btn).addClass('disabled');
+    }
+
+
+
+
+
+
